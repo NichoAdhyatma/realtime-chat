@@ -4,8 +4,8 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 const styles = {
   form: "h-14 w-full flex text-xl absolute bottom-0",
-  input: "w-full text-xl p-3 bg-gray-900 text-white outline-none border-none",
-  button: "w-[20%] bg-green-500",
+  input: "w-full text-xl p-3 bg-base-300 outline-none border-none",
+  button: "w-[20%] bg-secondary text-base-100",
 };
 
 const SendMessage = ({scroll}) => {
@@ -13,6 +13,7 @@ const SendMessage = ({scroll}) => {
 
   const sendMessage = async (e) => {
     e.preventDefault();
+    setInput("");
 
     const { uid, displayName } = auth.currentUser;
     input !== "" &&
@@ -23,7 +24,6 @@ const SendMessage = ({scroll}) => {
         timestamp: serverTimestamp(),
       }));
 
-    setInput("");
     scroll.current.scrollIntoView({ behavior: "smooth" });
   };
 

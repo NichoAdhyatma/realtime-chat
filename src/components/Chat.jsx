@@ -5,7 +5,7 @@ import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
 import SendMessage from "./SendMessage";
 
 const styles = {
-  main: "flex flex-col p-[1opx] relative mt-4",
+  main: "flex flex-col p-[1opx] relative mt-4 overflow-scroll pb-12",
 };
 
 const Chat = () => {

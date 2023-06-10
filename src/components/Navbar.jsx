@@ -1,12 +1,12 @@
 import React from "react";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import SignIn from "./SignIn";
 import LogOut from "./LogOut";
+import ThemeChanger from "./ThemeChanger";
 
 const styles = {
-  nav: "flex items-center justify-between p-4 bg-gray-800",
-  heading: "text-3xl text-white",
+  nav: "flex items-center justify-between p-4 bg-base-300 shadow-md",
+  heading: "text-3xl text-base-content",
 };
 
 const Navbar = () => {
@@ -15,7 +15,8 @@ const Navbar = () => {
   return (
     <div className={styles.nav}>
       <h1 className={styles.heading}>Co Chat</h1>
-      {user ? <LogOut /> : <SignIn />}
+      {user && <LogOut />}
+      <ThemeChanger />
     </div>
   );
 };
